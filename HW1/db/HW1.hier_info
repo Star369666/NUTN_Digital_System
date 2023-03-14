@@ -1,0 +1,126 @@
+|HW1
+Control => comb~0.IN0
+Control => comb~1.IN0
+Control => comb~2.IN0
+Control => comb~3.IN0
+Control => Cout~0.IN1
+Control => fulladd:f1.Cin
+X[0] => fulladd:f1.X
+X[1] => fulladd:f2.X
+X[2] => fulladd:f3.X
+X[3] => fulladd:f4.X
+Y[0] => comb~0.IN1
+Y[1] => comb~1.IN1
+Y[2] => comb~2.IN1
+Y[3] => comb~3.IN1
+S[0] <= fulladd:f1.Sum
+S[1] <= fulladd:f2.Sum
+S[2] <= fulladd:f3.Sum
+S[3] <= fulladd:f4.Sum
+Cout <= Cout~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1|fulladd:f1
+X => halfadd:h1.X
+Y => halfadd:h1.Y
+Cin => halfadd:h2.Y
+Sum <= halfadd:h2.Sum
+Carry <= Carry~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1|fulladd:f1|halfadd:h1
+X => Sum~0.IN0
+X => Carry~0.IN0
+Y => Sum~0.IN1
+Y => Carry~0.IN1
+Sum <= Sum~0.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1|fulladd:f1|halfadd:h2
+X => Sum~0.IN0
+X => Carry~0.IN0
+Y => Sum~0.IN1
+Y => Carry~0.IN1
+Sum <= Sum~0.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1|fulladd:f2
+X => halfadd:h1.X
+Y => halfadd:h1.Y
+Cin => halfadd:h2.Y
+Sum <= halfadd:h2.Sum
+Carry <= Carry~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1|fulladd:f2|halfadd:h1
+X => Sum~0.IN0
+X => Carry~0.IN0
+Y => Sum~0.IN1
+Y => Carry~0.IN1
+Sum <= Sum~0.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1|fulladd:f2|halfadd:h2
+X => Sum~0.IN0
+X => Carry~0.IN0
+Y => Sum~0.IN1
+Y => Carry~0.IN1
+Sum <= Sum~0.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1|fulladd:f3
+X => halfadd:h1.X
+Y => halfadd:h1.Y
+Cin => halfadd:h2.Y
+Sum <= halfadd:h2.Sum
+Carry <= Carry~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1|fulladd:f3|halfadd:h1
+X => Sum~0.IN0
+X => Carry~0.IN0
+Y => Sum~0.IN1
+Y => Carry~0.IN1
+Sum <= Sum~0.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1|fulladd:f3|halfadd:h2
+X => Sum~0.IN0
+X => Carry~0.IN0
+Y => Sum~0.IN1
+Y => Carry~0.IN1
+Sum <= Sum~0.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1|fulladd:f4
+X => halfadd:h1.X
+Y => halfadd:h1.Y
+Cin => halfadd:h2.Y
+Sum <= halfadd:h2.Sum
+Carry <= Carry~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1|fulladd:f4|halfadd:h1
+X => Sum~0.IN0
+X => Carry~0.IN0
+Y => Sum~0.IN1
+Y => Carry~0.IN1
+Sum <= Sum~0.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1|fulladd:f4|halfadd:h2
+X => Sum~0.IN0
+X => Carry~0.IN0
+Y => Sum~0.IN1
+Y => Carry~0.IN1
+Sum <= Sum~0.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
