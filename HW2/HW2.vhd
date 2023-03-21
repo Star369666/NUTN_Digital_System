@@ -47,7 +47,7 @@ begin
                     end if;
 
                 when "010" =>
-                    count_out <='1';
+                    count_out <= '1';
                     count_one <= counter1;
                     state <= "011";
                     count <= (others => '0');
