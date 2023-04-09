@@ -28,4 +28,4 @@ begin
     
     --giving the final promotion result--
     Carry <= c1 or c2;
-end;
+end fulladd_part;
