@@ -31,4 +31,4 @@ begin
 	c3 <= G(2) or (P(2) and G(1)) or (P(2) and P(1) and G(0)) or (P(2) and P(1) and P(0) and Cin);
 	Cout <= G(3) or (P(3) and G(2)) or (P(3) and P(2) and G(1)) or (P(3) and P(2) and P(1) and G(0)) or 
 			(P(3) and P(2) and P(1) and P(0) and Cin);
-end;
+end HW4_part;
