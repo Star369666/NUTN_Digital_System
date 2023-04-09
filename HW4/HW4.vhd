@@ -3,16 +3,16 @@ use ieee.std_logic_1164.all;
 
 entity HW4 is
 	port(
-		A, B: in std_logic_vector(0 to 3);
+		A, B: in std_logic_vector(3 downto 0);
 		Cin: in std_logic;
-		S: out std_logic_vector(0 to 3);
+		S: out std_logic_vector(3 downto 0);
 		Cout: out std_logic
 	);
 end HW4;
 
 architecture HW4_part of HW4 is
 	signal c1, c2, c3: std_logic;
-	signal P, G: std_logic_vector(0 to 3);
+	signal P, G: std_logic_vector(3 downto 0);
 component Partial_full_adder is
 	port ( 
 		A, B, Cin: in std_logic;
