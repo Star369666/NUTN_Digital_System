@@ -29,4 +29,4 @@ begin
 			Q <= D;
 		end if;
 	end process;
-end;
+end D_flip_flop_part;
