@@ -15,5 +15,5 @@ architecture multiplexer_part of multiplexer is
 begin
 	and_out <= A and B;
 	Out_mux <= IN1 when (and_out = '0') else IN2;
-end;
+end multiplexer_part;
 	
