@@ -14,4 +14,4 @@ architecture halfadd_part of halfadd is
 begin
     Sum <= X xor Y;
     Carry <= X and Y;
-end;
+end halfadd_part;
