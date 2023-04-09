@@ -13,4 +13,4 @@ begin
 	S <= A xor B xor Cin;
 	P <= A xor B;
 	G <= A and B;
-end;
+end Partial_full_adder;
