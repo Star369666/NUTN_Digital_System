@@ -29,4 +29,4 @@ begin
     f4: fulladd port map(X => X(3), Y => Y(3) xor Control, Cin => c(2), Sum => S(3), Carry => c(3));
     --to avoid overflow: double positive or negative number addition--
     Cout <= c(3) xor Control;
-end;	
+end adderSubtractor;	
