@@ -66,7 +66,7 @@ begin
                     dout_valid <= '0';
                     state <= "000";
 
-                when others =>
+                when others => null;
 
             end case;
         end if;
