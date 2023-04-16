@@ -11,15 +11,15 @@ port(
 end hw2;
 
 architecture a of hw2 is
-signal state : std_logic_vector(2 downto 0);--ª¬ºA
-signal reg : std_logic_vector(7 downto 0);--¼È¦s¾¹
-signal count : std_logic_vector(2 downto 0);--­pºâ¸ê®Æ­Ó¼Æ
-signal counter1 : std_logic_vector(3 downto 0);--­pºâ1ªº­Ó¼Æ¡A¨CÅª¤@­Ó¦ì¤¸¸ê®Æ§ó·s¤@¦¸
+signal state : std_logic_vector(2 downto 0);--ç‹€æ…‹
+signal reg : std_logic_vector(7 downto 0);--æš«å­˜å™¨
+signal count : std_logic_vector(2 downto 0);--è¨ˆç®—è³‡æ–™å€‹æ•¸
+signal counter1 : std_logic_vector(3 downto 0);--è¨ˆç®—1çš„å€‹æ•¸ï¼Œæ¯è®€ä¸€å€‹ä½å…ƒè³‡æ–™æ›´æ–°ä¸€æ¬¡
 
 begin
 	process(clk,reset)
 	begin
-		if reset = '1' then -- ¤@¤ÁÂk¹s
+		if reset = '1' then -- ä¸€åˆ‡æ­¸é›¶
 			state <= "000";
 			reg <= "00000000";
 			count <= "000";
@@ -32,37 +32,37 @@ begin
 			case state is
 				when "000" =>
 					if(start = '1') then
-						state <= "001";--¶i¤Jª¬ºA¤@
-						count <= "000";--Âk¹s
-						counter1 <= "0000";--Âk¹s
+						state <= "001";--é€²å…¥ç‹€æ…‹ä¸€
+						count <= "000";--æ­¸é›¶
+						counter1 <= "0000";--æ­¸é›¶
 					end if;
 				when "001" =>
-					reg <= (din & reg(7 downto 1));--Åª¸ê®Æ
+					reg <= (din & reg(7 downto 1));--è®€è³‡æ–™
 					if(din = '1') then
-						counter1 <= counter1 + 1;--­pºâ1ªº¦¸¼Æ
+						counter1 <= counter1 + 1;--è¨ˆç®—1çš„æ¬¡æ•¸
 					end if;
-					count <= count + 1;--­pºâÅªªº¦¸¼Æ
-					if(count = "111") then--·íÅª¨ì²Ä8¦¸(0~7)¸õ¨ì¤U¤@­Óª¬ºA
+					count <= count + 1;--è¨ˆç®—è®€çš„æ¬¡æ•¸
+					if(count = "111") then--ç•¶è®€åˆ°ç¬¬8æ¬¡(0~7)è·³åˆ°ä¸‹ä¸€å€‹ç‹€æ…‹
 						state <= "010";
 					end if;
 				when "010" =>
 					count_out <= '1';
-					count <= "000";--Âk¹s
-					count_one <= counter1;--§â­pºâ¥X1ªº¦¸¼Æµ¹count_one
+					count <= "000";--æ­¸é›¶
+					count_one <= counter1;--æŠŠè¨ˆç®—å‡º1çš„æ¬¡æ•¸çµ¦count_one
 					state <= "011";
 				when "011" =>
 					count_out <= '0';
 					dout_valid <= '1';
-					dout <= reg(7);-- ¿é¥X¸ê®Æ
-					reg <= (reg(6 downto 0) & '0');--¤@®æ¤@®æ©¹¥ª²¾
-					count <= count + 1;--­pºâ¿é¥Xªº¦¸¼Æ
-					if(count = "111") then--¿é¥X¨ì²Ä8¦¸(0~7)¸õ¨ì¤U¤@­Óª¬ºA
+					dout <= reg(7);-- è¼¸å‡ºè³‡æ–™
+					reg <= (reg(6 downto 0) & '0');--ä¸€æ ¼ä¸€æ ¼å¾€å·¦ç§»
+					count <= count + 1;--è¨ˆç®—è¼¸å‡ºçš„æ¬¡æ•¸
+					if(count = "111") then--è¼¸å‡ºåˆ°ç¬¬8æ¬¡(0~7)è·³åˆ°ä¸‹ä¸€å€‹ç‹€æ…‹
 						state <= "100";
 					end if;
 				when "100" =>
 					dout_valid <= '0';
 					state <= "000";
-				when others =>
+				when others => null;
 			end case;
 		end if;
 	end process;
