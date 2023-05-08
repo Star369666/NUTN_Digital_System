@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity Q7 is
 	port(
-		Input, CLK: in std_logic;
+		Input, CLK, Reset, Preset: in std_logic;
 		Q: out std_logic_vector(3 downto 0)
 	);
 end Q7;
@@ -14,7 +14,7 @@ signal temp: std_logic_vector(4 downto 0);
 	
 component D_Filp_Flop is
 	port(
-		CLK, D: in std_logic;
+		CLK, D, Preset, Reset: in std_logic;
 		Q: out std_logic
 	);
 end component;
@@ -22,7 +22,7 @@ end component;
 begin
 	temp(0) <= Input;
 	forloop: for i in 0 to 3 generate 
-		D_F_Fs: D_Filp_Flop port map(CLK, temp(i), temp(i+1));
+		D_F_Fs: D_Filp_Flop port map(CLK, temp(i), '0', '0', temp(i+1));
 		Q(i) <= temp(i+1);
 	end generate;
 end Q7_part;
