@@ -5,4 +5,5 @@ Error (10500): VHDL syntax error at Q8_not.vhd(15) near text "when";  expecting 
 to solve this problem, you are using when-else with process input(s), try not to use process to finish the dataflow error.
 
 Error (10500): VHDL syntax error at HW8.vhd(50) near text "port";  expecting "(", or "'", or "."
+Error (10500): VHDL syntax error at HW8.vhd(59) near text "generate";  expecting "loop"
 to slove this problem, you are using component port map with using process input(s), try not to use process to finish the structural error.
