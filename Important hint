@@ -1,0 +1,5 @@
+Error (10500): VHDL syntax error at Q8_not.vhd(13) near text "if";  expecting "end", or "(", or an identifier ("if" is a reserved keyword), or a concurrent statement
+to solve this problem, you are using if-else without using process input(s), try to use process to finish the behavioral error.
+
+Error (10500): VHDL syntax error at Q8_not.vhd(15) near text "when";  expecting ";"
+to solve this problem, you are using when-else with process input(s), try not to use proecess to finishe the structural error.
