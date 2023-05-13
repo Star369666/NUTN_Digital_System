@@ -1,0 +1,3 @@
+Load: use 50ns like a clock.
+Serial_in: 0.
+Parallel_in: 1111.
