@@ -18,8 +18,8 @@ begin
 	begin
 		if rst = '1' then 
 			count <= "0000";
-		elsif rising_edge (clk) 
-			then count <= count + 2;
+		elsif rising_edge (clk) then 
+			count <= count + 2;
 		end if;
 	end process;
 	q <= count;
