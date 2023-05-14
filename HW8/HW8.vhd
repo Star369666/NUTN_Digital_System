@@ -44,7 +44,7 @@ component HW8_D_filp_flop is
 end component;
 
 begin 
-	not_load <= not LOAD;
+	not1: HW8_not port map(LOAD, not_load);
 	and1: HW8_and port map(Serial_in, not_load, and_output(7));
 	and2: HW8_and port map(LOAD, Parallel_in(3), and_output(6));
 	and3: HW8_and port map(d_output(3), not_load, and_output(5));
